@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'girlyFontFamily';
+    src: url(/src/assets/fonts/Pacifico/Pacifico-Regular.ttf);
+}

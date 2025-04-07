@@ -1,0 +1,124 @@
+/* 🎀 Selected Date */
+.react-datepicker__day--selected, 
+.react-datepicker__day--keyboard-selected {
+    background: #0d9488 !important; /* Tailwind teal-600 */
+    color: white !important;
+    font-weight: bold;
+    border-radius: 8px; /* Adds a softer, rounded look */
+    transition: all 0.3s ease-in-out;
+}
+
+.react-datepicker__day--selected:hover, 
+.react-datepicker__day--keyboard-selected:hover {
+    background: #0f766e !important; /* Darker teal for hover */
+}
+
+/* 💕 Today’s Date */
+.react-datepicker__day--today {
+    background: #99f6e4 !important; /* Tailwind teal-200 */
+    color: #0d9488 !important; /* Tailwind teal-600 */
+    font-weight: bold;
+    border-radius: 8px; /* Matches the selected date style */
+}
+
+/* 🌸 Hover Effect on Days */
+.react-datepicker__day:hover {
+    background: #ccfbf1 !important; /* Lighter teal hover effect */
+    border-radius: 8px;
+}
+
+/* 🎀 Input Field */
+.react-datepicker-wrapper input {
+    padding: 10px 12px;
+    font-size: 0.875rem; /* text-sm */
+    color: #374151; /* text-gray-900 */
+    background: #f9fafb; /* bg-gray-50 */
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 6px; /* Slightly rounded for better UX */
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Focus and Hover Effects */
+.react-datepicker-wrapper input:focus {
+    border-color: #0d9488; /* Tailwind teal-600 */
+    box-shadow: 0 0 8px rgba(13, 148, 136, 0.3); /* Soft teal glow */
+}
+
+/* ✨ Popper Styling (Dropdown Calendar) */
+.react-datepicker-popper {
+    z-index: 9999 !important; /* Ensures it appears above other elements */
+}
+
+.react-datepicker {
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+/* 📅 Month & Year Dropdown */
+.react-datepicker__header {
+    background: #0d9488; /* Tailwind teal-600 */
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+
+.react-datepicker__navigation:hover {
+    background: rgba(13, 148, 136, 0.1);
+    border-radius: 50%;
+}
+
+/* ✨ Calendar Grid Improvements */
+.react-datepicker__day-name {
+    color: #0d9488 !important; /* Tailwind teal-600 */
+    font-weight: bold;
+}
+
+/* ⏰ Time Input Field */
+input[type="time"] {
+    appearance: none; /* Removes default browser styles */
+    padding: 10px 12px;
+    font-size: 0.875rem; /* text-sm */
+    color: #374151; /* text-gray-900 */
+    background: #f9fafb; /* bg-gray-50 */
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 6px; /* Slightly rounded for better UX */
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Focus State */
+input[type="time"]:focus {
+    border-color: #0d9488 !important;
+    box-shadow: 0 0 8px rgba(13, 148, 136, 0.5); /* Soft teal glow */
+}
+
+/* Remove Default Chrome/Edge Time Picker Icon */
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(37%) sepia(72%) saturate(374%) hue-rotate(138deg) brightness(90%) contrast(85%);
+    cursor: pointer;
+}
+/* Custom Scrollbar Style for Both Sections */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 12px; /* Set the width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f3f4f6; /* Light gray for track */
+    border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #0f766e; /* Tailwind teal-800 for thumb */
+    border-radius: 10px;
+    border: 2px solid #f3f4f6; /* Matching border color */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #134e4a; /* Darker teal-900 for hover */
+}
+
+  
