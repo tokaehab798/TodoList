@@ -200,7 +200,7 @@ export default function Home() {
                                 />
                             </div>
 
-                            <div className="relative flex w-full ms-10 items-center gap-2">
+                            <div className="relative flex w-full ms-5 items-center gap-2">
                                 <button
                                     type="button"
                                     id="category-dropdown"
