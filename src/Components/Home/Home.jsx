@@ -12,7 +12,7 @@ export default function Home() {
     const [theTask, setTheTask] = useState('')
     const [editingTaskId, setEditingTaskId] = useState(null)
     const [date, setdate] = useState(null)
-    const [time, setTime] = useState()
+    const [time, setTime] = useState("00:00")
     const mainCategory = ['Personal', 'Work', 'Goal']
     const [showSearch, setShowSearch] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
@@ -200,7 +200,7 @@ export default function Home() {
                                 />
                             </div>
 
-                            <div className="relative flex w-full items-center gap-2">
+                            <div className="relative flex w-full ms-10 items-center gap-2">
                                 <button
                                     type="button"
                                     id="category-dropdown"
@@ -363,7 +363,7 @@ export default function Home() {
                             </button>
                         )}
 
-                        {allTasks.filter(task => !task.completed).length === 0 ? (
+                        {allTasks.length > 0 && allTasks.filter(task => !task.completed).length === 0 ? (
                             <p className="text-gray-500 text-center mt-8 text-sm italic">
                                 No pending tasks. Enjoy your day! 😊
                             </p>
@@ -433,26 +433,23 @@ export default function Home() {
                     </div>
                 </div>
 
-
-                {allTasks.length > 0 ? <div className=" w-full ">
-                    <div className="max-w-md mx-auto my-4 ">
-                        <div className="relative w-full h-4 bg-gray-200 rounded-full overflow-hidden">
-                            <motion.div
-                                className="h-4 bg-teal-800 rounded-full"
-                                initial={{ width: "0%" }}
-                                animate={{ width: `${progress}%` }}
-                                transition={{ duration: 0.5, ease: "easeOut" }}
-                            />
+                {allTasks.length > 0 && (
+                    <div className="w-full flex justify-center">
+                        <div className="w-[90%] sm:w-[80%] md:w-[60%] lg:w-[40%] my-4">
+                            <div className="relative w-full h-4 bg-gray-200 rounded-full overflow-hidden mx-auto">
+                                <motion.div
+                                    className="h-4 bg-teal-800 rounded-full"
+                                    initial={{ width: "0%" }}
+                                    animate={{ width: `${progress}%` }}
+                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                />
+                            </div>
+                            <p className="text-gray-700 text-center mt-2">
+                                {completedTasks} / {alltasks} task completed ({Math.round(progress)}%)
+                            </p>
                         </div>
-
-
-                        <p className='text-gray-700 text-center'>
-                            {completedTasks} / {alltasks} task completed {Math.round(progress)}%
-                        </p>
                     </div>
-
-
-                </div> : ''}
+                )}
             </div>
         </section >
 
