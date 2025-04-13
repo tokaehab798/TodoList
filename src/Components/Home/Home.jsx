@@ -179,7 +179,7 @@ export default function Home() {
         localStorage.setItem('allSavedTasks', JSON.stringify(updatedTasksAfterPinned))
     }
     return <>
-        <section className=" py-4 bg-gray-100 min-h-lvh flex flex-col">
+<section className="w-full min-h-lvh bg-gray-100 py-4 flex flex-col">
 
 
             <h1 className="text-center text-teal-700 font-bold text-4xl" style={{ fontFamily: 'girlyFontFamily' }}> TO-DO List</h1>
@@ -200,24 +200,26 @@ export default function Home() {
                                 />
                             </div>
 
-                            <div className="relative flex w-full ms-5 items-center gap-2">
+                            <div className="relative flex w-full flex-wrap justify-center items-center gap-2">
                                 <button
                                     type="button"
                                     id="category-dropdown"
                                     onClick={checkIfSelectIsOpen}
-                                    className=" sm:w-auto shrink-0 px-3 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-300 rounded-lg   focus:ring-teal-300 focus:outline-none focus:border-teal-500"
+                                    className="sm:w-auto shrink-0 px-3 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-300 rounded-lg focus:ring-teal-300 focus:outline-none focus:border-teal-500"
                                 >
                                     {categoryType}
                                 </button>
                                 {isOpened && (
                                     <ul className="absolute left-0 z-20 min-w-32 bg-white border border-gray-300 rounded-lg shadow-lg">
                                         {mainCategory.map((category) => (
-                                            <li key={category}
+                                            <li
+                                                key={category}
                                                 onClick={() => {
                                                     setcategoryType(category);
                                                     setisOpened(false);
                                                 }}
-                                                className="px-3 py-2 text-sm cursor-pointer">
+                                                className="px-3 py-2 text-sm cursor-pointer"
+                                            >
                                                 {category}
                                             </li>
                                         ))}
@@ -240,6 +242,7 @@ export default function Home() {
                                     onChange={(e) => setTime(e.target.value)}
                                     className="p-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 focus:outline-none"
                                 />
+
                                 <button
                                     type="button"
                                     onClick={handleAddOrUpdate}
@@ -248,6 +251,7 @@ export default function Home() {
                                     {editingTaskId ? 'Save' : 'Add'}
                                 </button>
                             </div>
+
                         </div>
                     </form>
                 </div>
